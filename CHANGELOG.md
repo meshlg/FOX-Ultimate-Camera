@@ -12,7 +12,6 @@
 - **Camera Hold:** Replaced recursive `zo_callLater` loops with `EVENT_MANAGER:RegisterForUpdate` for smoother and more reliable camera movement when holding keys.
 
 ### Changed
-- **Dependencies:** `LibAddonMenu-2.0` is now an **OptionalDependsOn**. The addon will function without it (settings menu will just be unavailable), reducing strict requirements.
 - **Internal Architecture:**
   - Created `Modules/Utils.lua` to de-duplicate utility functions (`Clamp`, `GetTimeMs`, etc.) across 6 modules.
   - Removed redundant `FOXUltimateCamera` namespace declarations in multiple files to clean up the codebase.

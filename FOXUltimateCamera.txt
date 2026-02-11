@@ -8,7 +8,7 @@
 
 ## Title: |cFF8000FOX|r Ultimate Camera |cFBF0C35.05.2144|r
 ## Description: Immersive camera addon that refines zoom, FOV and offset with smooth, context-aware behavior and dialog camera tweaks.
-## Author: |cFF8000meshlg|r @fox.boy
+## Author: |cFF8000meshlg|r @LiminalFox
 ## Version: 5.05.2144
 ## AddOnVersion: 505
 ## APIVersion: 101048

@@ -114,7 +114,7 @@ local function GetPanelData(addon)
         type = "panel",
         name = "FOX Ultimate Camera",
         displayName = "|cFF8000FOX|r Ultimate Camera",
-        author = "meshlg @LiminalFox",
+        author = "meshlg",
         version = "5.05.2144",
         slashCommand = GetString(SI_FOXUC_SLASH_COMMAND),
         registerForDefaults = false,

@@ -219,13 +219,13 @@ function ContextSensitivity:UpdateSensitivity()
     local newSensitivity3rd = self.baseSensitivity3rd * newMultiplier
     local newSensitivity1st = self.baseSensitivity1st * newMultiplier
     
-    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_THIRD, newSensitivity3rd)
-    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_FIRST, newSensitivity1st)
+    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_THIRD, tostring(newSensitivity3rd))
+    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_FIRST, tostring(newSensitivity1st))
 end
 
 function ContextSensitivity:RestoreBaseSensitivity()
-    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_THIRD, self.baseSensitivity3rd)
-    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_FIRST, self.baseSensitivity1st)
+    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_THIRD, tostring(self.baseSensitivity3rd))
+    SetSetting(SETTING_TYPE_CAMERA, CAMERA_SENS_FIRST, tostring(self.baseSensitivity1st))
     self.appliedMultiplier = DEFAULT_MULTIPLIER
     self.currentState = "default"
 end

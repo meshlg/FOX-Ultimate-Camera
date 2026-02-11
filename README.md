@@ -2,7 +2,7 @@
 
 **Version:** 5.05.2144
 
-**Author:** meshlg (@fox.boy)
+**Author:** meshlg (@LiminalFox)
 
 **ESOUI:** https://www.esoui.com/downloads/info4009-FOXUltimateCamera.html
 
