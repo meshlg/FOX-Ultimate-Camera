@@ -609,6 +609,100 @@ function addon:SetContextMountedSpeedIn(value)
     end
 end
 
+-- Context Sensitivity Wrappers
+
+function addon:IsContextSensitivityEnabled()
+    if not self.savedVars then
+        return defaults.contextSensitivityEnabled
+    end
+    return self.savedVars.contextSensitivityEnabled
+end
+
+function addon:SetContextSensitivityEnabled(enabled)
+    if not self.savedVars then
+        return
+    end
+
+    local value = enabled and true or false
+    if self.savedVars.contextSensitivityEnabled == value then
+        return
+    end
+
+    self.savedVars.contextSensitivityEnabled = value
+    
+    local module = GetContextSensitivityModule()
+    if not module then return end
+    
+    if value then
+        if module.Initialize then
+            module:Initialize(self)
+        end
+    else
+        if module.Shutdown then
+            module:Shutdown()
+        end
+    end
+end
+
+function addon:GetContextSensitivityCombat()
+    local module = GetContextSensitivityModule()
+    if module and module.GetCombatMultiplier then
+        return module:GetCombatMultiplier()
+    end
+    -- Fallback to saved var or default if module not initialized
+    return self.savedVars.contextSensitivityCombat or defaults.contextSensitivityCombat
+end
+
+function addon:SetContextSensitivityCombat(value)
+    local module = GetContextSensitivityModule()
+    if module and module.SetCombatMultiplier then
+        module:SetCombatMultiplier(value)
+    else
+        -- Correctly save logic even if module not active
+        if self.savedVars then
+            self.savedVars.contextSensitivityCombat = value
+        end
+    end
+end
+
+function addon:GetContextSensitivityMounted()
+    local module = GetContextSensitivityModule()
+    if module and module.GetMountedMultiplier then
+        return module:GetMountedMultiplier()
+    end
+    return self.savedVars.contextSensitivityMounted or defaults.contextSensitivityMounted
+end
+
+function addon:SetContextSensitivityMounted(value)
+    local module = GetContextSensitivityModule()
+    if module and module.SetMountedMultiplier then
+        module:SetMountedMultiplier(value)
+    else
+        if self.savedVars then
+            self.savedVars.contextSensitivityMounted = value
+        end
+    end
+end
+
+function addon:GetContextSensitivitySprint()
+    local module = GetContextSensitivityModule()
+    if module and module.GetSprintMultiplier then
+        return module:GetSprintMultiplier()
+    end
+    return self.savedVars.contextSensitivitySprint or defaults.contextSensitivitySprint
+end
+
+function addon:SetContextSensitivitySprint(value)
+    local module = GetContextSensitivityModule()
+    if module and module.SetSprintMultiplier then
+        module:SetSprintMultiplier(value)
+    else
+        if self.savedVars then
+            self.savedVars.contextSensitivitySprint = value
+        end
+    end
+end
+
 function addon:IsSeparateInOutEnabled()
     local module = GetContextSpeedModule()
     if module and module.IsSeparateInOutEnabled then

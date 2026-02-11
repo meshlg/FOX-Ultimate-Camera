@@ -142,21 +142,22 @@ function ContextSensitivity:OnMountedStateChanged(mounted)
 end
 
 function ContextSensitivity:OnUpdate()
-    -- Detect sprint state. ESO API does not expose a direct IsPlayerSprinting() function.
-    -- This heuristic checks IsShiftKeyDown() which is the default sprint key.
-    -- LIMITATION: Will not work if the player has rebound sprint to another key,
-    -- or uses auto-sprint. This is a best-effort approach given API constraints.
-    local wasSprinting = self.isSprinting
+    -- Use native API for sprint detection
+    local isSprinting = IsUnitSprinting("player")
     
-    -- Check if player is trying to sprint (shift key down, moving, has stamina)
-    local isMoving = IsPlayerMoving()
-    local isShiftDown = IsShiftKeyDown()
-    local hasStamina = GetUnitPower("player", POWERTYPE_STAMINA) > 0
+    -- Ensure we are actually moving (IsUnitSprinting can sometimes be true while stationary in some edge cases ?)
+    -- But generally IsUnitSprinting implies movement. 
+    -- Let's trust the API but also check if we are mounted (sprint on mount is handled by mounted state usually)
     
-    -- Player is sprinting if: moving, shift down, has stamina, not blocking/swimming
-    self.isSprinting = isMoving and isShiftDown and hasStamina and not self.isMounted
-    
-    if wasSprinting ~= self.isSprinting then
+    if self.isMounted then
+        -- If mounted, we use mounted sensitivity, so isSprinting flag matters less, 
+        -- but conceptually "sprinting while mounted" is just "fast mount". 
+        -- Our logic gives priority to Mounted over Sprint, so it's fine.
+        isSprinting = false
+    end
+
+    if isSprinting ~= self.isSprinting then
+        self.isSprinting = isSprinting
         self:UpdateSensitivity()
     end
 end
