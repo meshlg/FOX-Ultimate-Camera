@@ -1,7 +1,10 @@
 # FOX Ultimate Camera
 
 **Version:** 5.05.2144
+
 **Author:** meshlg (@fox.boy)
+
+**ESOUI:** https://www.esoui.com/downloads/info4009-FOXUltimateCamera.html
 
 ## Description
 
