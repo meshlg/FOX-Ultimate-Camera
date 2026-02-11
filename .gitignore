@@ -1,0 +1,20 @@
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# ESO specific (usually not in addon folder, but good to have)
+SavedVariables/
+FOXUltimateCamera.code-workspace
+global_rules.md

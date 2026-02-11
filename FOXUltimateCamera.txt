@@ -1,0 +1,56 @@
+; SPDX-License-Identifier: MIT
+; SPDX-FileCopyrightText: 2026 meshlg
+
+; This Add-on is not created by, affiliated with, or sponsored by, ZeniMax Media Inc. or its affiliates.
+; The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. 
+; In the United States and/or other countries. 
+; All rights reserved.
+
+## Title: |cFF8000FOX|r Ultimate Camera |cFBF0C35.05.2144|r
+## Description: Immersive camera addon that refines zoom, FOV and offset with smooth, context-aware behavior and dialog camera tweaks.
+## Author: |cFF8000meshlg|r @fox.boy
+## Version: 5.05.2144
+## AddOnVersion: 505
+## APIVersion: 101048
+## DependsOn: LibAddonMenu-2.0>=41
+## SavedVariables: FOXUltimateCamera_SavedVariables
+
+; >> KEYBINDINGS
+bindings.xml
+
+; >> ADDON FILES
+
+; >> LOCALIZATION
+Localization/en-US.lua
+Localization/ru-RU.lua
+
+; >> MODULES
+Modules/Utils.lua
+Modules/FirstPersonMode/FirstPersonMode.lua
+Modules/FirstPersonMode/TransitionLogger.lua
+Modules/FirstPersonMode/AutoFirstPersonMode.lua
+Modules/WeaponSheathing/WeaponSheathing.lua
+Modules/CameraLimits/CameraLimits.lua
+Modules/ZoomStep/ZoomStep.lua
+Modules/ZoomSmoothing/ZoomSmoothing.lua
+Modules/ZoomSpeed/ZoomSpeed.lua
+Modules/ContextSpeed/ContextSpeed.lua
+Modules/CustomCheckbox/CustomCheckbox.lua
+Modules/CustomSlider/CustomSlider.lua
+Modules/ContextSensitivity/ContextSensitivity.lua
+Modules/Interaction/InteractionGuard.lua
+Modules/CameraOffset/CameraOffset.lua
+Modules/CameraOffset/CameraOffsetIndicator.lua
+Modules/Fov/FovController.lua
+Modules/Fov/FovContext.lua
+
+; >> SETTINGS
+SettingsMenu/Settings.lua
+
+; >> CORE ADDON FILE
+FOXUltimateCamera.lua
+
+; >> AUTHOR CONTACTS
+
+; Author: meshlg
+; Contacts: Discord - meshlg

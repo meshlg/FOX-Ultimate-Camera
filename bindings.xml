@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Bindings>
+    <Layer name="SI_KEYBINDINGS_LAYER_GENERAL">
+        <Category name="|cFF8000FOX|r Ultimate Camera">
+            <!-- Camera Offset: Movement Controls -->
+            <Action name="FOXUC_CAMERA_LEFT">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnCameraLeft(true)</Down>
+                <Up>FOXUltimateCamera.modules.CameraOffset.OnCameraLeft(false)</Up>
+            </Action>
+            
+            <Action name="FOXUC_CAMERA_RIGHT">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnCameraRight(true)</Down>
+                <Up>FOXUltimateCamera.modules.CameraOffset.OnCameraRight(false)</Up>
+            </Action>
+            
+            <Action name="FOXUC_CAMERA_UP">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnCameraUp(true)</Down>
+                <Up>FOXUltimateCamera.modules.CameraOffset.OnCameraUp(false)</Up>
+            </Action>
+            
+            <Action name="FOXUC_CAMERA_DOWN">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnCameraDown(true)</Down>
+                <Up>FOXUltimateCamera.modules.CameraOffset.OnCameraDown(false)</Up>
+            </Action>
+            
+            <!-- Camera Offset: Reset -->
+            <Action name="FOXUC_CAMERA_RESET">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnResetToCenter()</Down>
+            </Action>
+            
+            <!-- Camera Offset: Shoulder Swap -->
+            <Action name="FOXUC_SHOULDER_SWAP">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnShoulderSwap()</Down>
+            </Action>
+            
+            <!-- Camera Offset: Preset Save -->
+            <Action name="FOXUC_SAVE_PRESET_1">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnSavePreset1()</Down>
+            </Action>
+            
+            <Action name="FOXUC_SAVE_PRESET_2">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnSavePreset2()</Down>
+            </Action>
+            
+            <Action name="FOXUC_SAVE_PRESET_3">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnSavePreset3()</Down>
+            </Action>
+            
+            <!-- Camera Offset: Preset Load -->
+            <Action name="FOXUC_LOAD_PRESET_1">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnLoadPreset1()</Down>
+            </Action>
+            
+            <Action name="FOXUC_LOAD_PRESET_2">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnLoadPreset2()</Down>
+            </Action>
+            
+            <Action name="FOXUC_LOAD_PRESET_3">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnLoadPreset3()</Down>
+            </Action>
+            
+            <!-- Camera Offset: Restore Original -->
+            <Action name="FOXUC_RESTORE_ORIGINAL">
+                <Down>FOXUltimateCamera.modules.CameraOffset.OnRestoreOriginal()</Down>
+            </Action>
+        </Category>
+    </Layer>
+</Bindings>
