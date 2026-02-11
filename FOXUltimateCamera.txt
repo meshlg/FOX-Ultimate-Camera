@@ -6,10 +6,10 @@
 ; In the United States and/or other countries. 
 ; All rights reserved.
 
-## Title: |cFF8000FOX|r Ultimate Camera |cFBF0C35.05.2144|r
+## Title: |cFF8000FOX|r Ultimate Camera |cFBF0C35.05.2234|r
 ## Description: Immersive camera addon that refines zoom, FOV and offset with smooth, context-aware behavior and dialog camera tweaks.
 ## Author: |cFF8000meshlg|r @LiminalFox
-## Version: 5.05.2144
+## Version: 5.05.2234
 ## AddOnVersion: 505
 ## APIVersion: 101048
 ## DependsOn: LibAddonMenu-2.0>=41

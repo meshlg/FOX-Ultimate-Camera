@@ -1,10 +1,10 @@
 # Changelog
 
-## [5.05.2145] - 2026-02-11
+## [5.05.2234] - 2026-02-11
 
 ### Fixed
 - **Context Sensitivity:** Fixed a critical bug where enabling Context Sensitivity in settings did nothing because the internal wrapper functions were missing. The feature now correctly initializes and shuts down when toggled.
-- **Sprint Detection:** Replaced unreliable key-check heuristic with native `IsUnitSprinting` API call. This fixes sprint detection for players with custom keybinds or toggle sprint.
+- **Sprint Detection:** Fixed a Lua error ("function expected instead of nil") for clients where `IsUnitSprinting` is unavailable. Added a fallback to the previous key-based detection for stability.
 
 ## [5.05.2144] - 2026-02-11
 

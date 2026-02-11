@@ -142,17 +142,20 @@ function ContextSensitivity:OnMountedStateChanged(mounted)
 end
 
 function ContextSensitivity:OnUpdate()
-    -- Use native API for sprint detection
-    local isSprinting = IsUnitSprinting("player")
+    local isSprinting = false
     
-    -- Ensure we are actually moving (IsUnitSprinting can sometimes be true while stationary in some edge cases ?)
-    -- But generally IsUnitSprinting implies movement. 
-    -- Let's trust the API but also check if we are mounted (sprint on mount is handled by mounted state usually)
+    if IsUnitSprinting then
+        isSprinting = IsUnitSprinting("player")
+    else
+        -- Fallback for when IsUnitSprinting is not available (older APIs or restriction)
+        local isMoving = IsPlayerMoving()
+        local isShiftDown = IsShiftKeyDown() -- Default sprint key
+        local hasStamina = GetUnitPower("player", POWERTYPE_STAMINA) > 0
+        
+        isSprinting = isMoving and isShiftDown and hasStamina and not self.isMounted
+    end
     
     if self.isMounted then
-        -- If mounted, we use mounted sensitivity, so isSprinting flag matters less, 
-        -- but conceptually "sprinting while mounted" is just "fast mount". 
-        -- Our logic gives priority to Mounted over Sprint, so it's fine.
         isSprinting = false
     end
 

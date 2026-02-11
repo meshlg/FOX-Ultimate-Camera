@@ -1,6 +1,6 @@
 # FOX Ultimate Camera
 
-**Version:** 5.05.2144
+**Version:** 5.05.2146
 
 **Author:** meshlg (@LiminalFox)
 
